@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+if [ -z "$1" ] || [ -z "$2" ]; then
+  printf "$0: Error: Missing argument(s)\n"
+  printf "$0 <file> <size>\n"
+  exit 1
+fi
+
+split -d "$1" -C "$2" "$1.part"
