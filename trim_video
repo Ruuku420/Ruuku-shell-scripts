@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+link="$1"
+start_stamp="$2"
+duration="$3"
+out="$4"
+
+ffmpeg \
+  -ss $start_stamp \
+  -i "$link" \
+  -t $duration \
+  -c copy \
+  "$out"
